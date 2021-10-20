@@ -27,7 +27,8 @@ class aw_method():
 		# resetting gradient back to zero
 		Dis_opt.zero_grad()
 
-		# computing fake batch gradient 
+		# computing fake batch gradient
+		##https://blog.csdn.net/weixin_44058333/article/details/99701876
 		Dloss_fake.backward()#(retain_graph=True)
 		# tensor with real gradients
 		grad_fake_tensor = [param.grad for _, param in Dis_Net.named_parameters()]
